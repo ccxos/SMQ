@@ -7,7 +7,7 @@ import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import tty
 import termios
-import SMQ_embedded as SMQ
+import SMQ_m
 
 CYAN = "\033[1;36m"
 GREEN = "\033[1;32m"
@@ -78,7 +78,7 @@ def smqa():
         while True:
             key = getch()
             if key == "\x02":
-                SMQ.sema()
+                SMQ_m.sema()
                 return
 
 if __name__ == "__main__":
