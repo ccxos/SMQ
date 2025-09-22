@@ -8,6 +8,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import tty
 import termios
 
+
 CYAN = "\033[1;36m"
 GREEN = "\033[1;32m"
 DARK_RED = "\033[0;31m"
@@ -73,7 +74,7 @@ def smqa():
         time.sleep(0.12)
         print(DARK_RED + "[ CTRL + C to Exit ]" + RESET)
         print()
-        print(DARK_RED + "[ CTRL + B to Back ]" + RESET)
+        
         while True:
             key = getch()
             if key == "\x02":
@@ -81,8 +82,4 @@ def smqa():
                 return
 
 if __name__ == "__main__":
-    try:
-        smqa()
-    except Exception:
-        import traceback
-        traceback.print_exc()
+    smqa()
