@@ -19,7 +19,7 @@ for p in pkgs:
         subprocess.check_call([sys.executable,"-m","pip","install",p])
 ' || { echo "Failed installing python packages (you can manually run : python3 -m pip install requests)"; }
 
-PYFILE=$(mktemp /tmp/SMQ.XXXXXX.py) || PYFILE="$INSTALL_DIR/SMQ_embedded.py"
+PYFILE=$(mktemp "$HOME/SMQ.XXXXXX.py") || PYFILE="$INSTALL_DIR/SMQ_embedded.py"
 
 cat > "$PYFILE" <<'PYCODE'
 
