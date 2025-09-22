@@ -77,7 +77,7 @@ def smqa():
         
         while True:
             key = getch()
-            if key == "\x02":
+            if key == "\x03":
                 
                 return
 
