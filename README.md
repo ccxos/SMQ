@@ -5,7 +5,7 @@
 **- Installation , Using**
 
 ```
-git clone https://github.com/ccxos/SMQ-ZAIN.git
+git clone https://github.com/ccxos/SMQ.git
 ```
 
 ```
