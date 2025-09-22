@@ -79,7 +79,16 @@ def typing_print(text, color=DARK_RED, char_delay=0.06):
     sys.stdout.write(RESET + "\n")
     sys.stdout.flush()
 
+def clear():
+    try:
+        sys.stdout.write("\033[3J\033[H\033[2J")
+        sys.stdout.flush()
+    except Exception:
+        pass
+    os.system("cls" if os.name == "nt" else "clear")
+
 def sema():
+    clear()
     time.sleep(1.9)
     typing_print(CYAN + "--- Choose an option ---" + RESET)
     print()
