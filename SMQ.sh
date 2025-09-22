@@ -51,23 +51,25 @@ trap 'rm -f "$PYFILE" 2>/dev/null || true' EXIT
 
 echo "Using temporary python file: $PYFILE"
 
-
 cat > "$PYFILE" <<'PYCODE'
 # -*- coding: utf-8 -*-
-# temporary embedded runner — will be executed with PYTHONPATH pointing to project dir
-import sys, time, os
-
-# imports (سيتم إيجادها لأننا نشغّل هذا الملف مع PYTHONPATH للمشروع)
-import SMQ_A
+#Thx!
+import requests
+import time
+import sys
 import SMQ_Z
+import SMQ_A
 
 CYAN = "\033[1;36m"
-MAUVE = "\033[38;5;141m"
-RED = "\033[1;31m"
+GREEN = "\033[1;32m"
 DARK_RED = "\033[0;31m"
+MAGENTA = "\033[1;35m"
+YELLOW = "\033[1;33m"
+RED = "\033[1;31m"
+MAUVE = "\033[38;5;141m"
 RESET = "\033[0m"
 
-def typing_print(text, color=DARK_RED, char_delay=0.02):
+def typing_print(text, color=DARK_RED, char_delay=0.06):
     sys.stdout.write(color)
     sys.stdout.flush()
     for ch in text:
@@ -77,17 +79,8 @@ def typing_print(text, color=DARK_RED, char_delay=0.02):
     sys.stdout.write(RESET + "\n")
     sys.stdout.flush()
 
-def clear():
-    try:
-        sys.stdout.write("\033[3J\033[H\033[2J")
-        sys.stdout.flush()
-    except Exception:
-        pass
-    os.system("cls" if os.name == "nt" else "clear")
-
 def sema():
-    clear()
-    time.sleep(0.6)
+    time.sleep(1.9)
     typing_print(CYAN + "--- Choose an option ---" + RESET)
     print()
     while True:
@@ -99,26 +92,19 @@ def sema():
         print()
 
         if choice == "1":
-            # نفّذ دالة Zain
             SMQ_Z.smqz()
             break
         elif choice == "2":
-            # نفّذ دالة Asiacell
             SMQ_A.smqa()
             break
         else:
             print(DARK_RED + "Invalid Choice !" + RESET)
             print()
-            time.sleep(1.0)
+            time.sleep(1.5)
             continue
 
 if __name__ == "__main__":
-    try:
-        sema()
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        sys.exit(1)
+    sema()
 PYCODE
 
 
