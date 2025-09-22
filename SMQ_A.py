@@ -7,7 +7,7 @@ import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import tty
 import termios
-import SMQ_m
+import SMQ
 
 CYAN = "\033[1;36m"
 GREEN = "\033[1;32m"
