@@ -16,7 +16,7 @@ cd SMQ
 bash SMQ.sh
 ```
 ---
-**- if python uninstalled**
+**- If Python Uninstalled**
 
 ```
 pkg install python
