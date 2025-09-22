@@ -57,6 +57,7 @@ cat > "$PYFILE" <<'PYCODE'
 import requests
 import time
 import sys
+import os
 import SMQ_Z
 import SMQ_A
 
