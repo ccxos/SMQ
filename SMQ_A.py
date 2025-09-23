@@ -8,7 +8,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import tty
 import termios
 
-
 CYAN = "\033[1;36m"
 GREEN = "\033[1;32m"
 DARK_RED = "\033[0;31m"
