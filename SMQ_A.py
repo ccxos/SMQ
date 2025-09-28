@@ -123,7 +123,7 @@ def typing_print(text, color=DARK_RED, char_delay=0.06):
     sys.stdout.write(RESET + "\n")
     sys.stdout.flush()
 
-def smqz():
+def smqa():
     while True:
         clear()
         time.sleep(1.9)
@@ -206,4 +206,4 @@ def smqz():
             sys.exit(0)
 
 if __name__ == "__main__":
-    smqz()
+    smqa()
