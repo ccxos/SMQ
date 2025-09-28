@@ -32,4 +32,4 @@ python3-pip
 
 ---
 
-## **By Ali Ahmed** -- ## **@ccxos**
+## **By Ali Ahmed**
